@@ -10,10 +10,6 @@
 <body>
     <form id="form1" runat="server">
         <p>
-            &nbsp;</p>
-        <p>
-            &nbsp;</p>
-        <p>
             Ingrese nombre del producto:&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtNombreProducto1" runat="server" Height="16px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp; Cantidad:&nbsp;&nbsp;&nbsp;
@@ -25,6 +21,14 @@
 &nbsp;&nbsp;&nbsp; Cantidad:&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtCantidad2" runat="server"></asp:TextBox>
         </p>
+        <p>
+            <asp:Button ID="btnGeneTabla" runat="server" OnClick="btnGeneTabla_Click" Text="Generar Tabla" />
+        </p>
+        <p>
+            <asp:Label ID="lblTabla" runat="server"></asp:Label>
+        </p>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>
