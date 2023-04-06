@@ -42,6 +42,15 @@ namespace TP2_Grupo_Nro_3
         protected global::System.Web.UI.WebControls.TextBox txtCantidad1;
 
         /// <summary>
+        /// Control lblSoloLetras1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSoloLetras1;
+
+        /// <summary>
         /// Control txtNombreProducto2.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace TP2_Grupo_Nro_3
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCantidad2;
+
+        /// <summary>
+        /// Control lblSoloLetras2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSoloLetras2;
 
         /// <summary>
         /// Control btnGeneTabla.
