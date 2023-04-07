@@ -15,6 +15,16 @@
             <br />
             Apellido:&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            Ciudad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="ddlCiudades" runat="server">
+                <asp:ListItem Value="Zona norte">Gral Pacheco</asp:ListItem>
+                <asp:ListItem Value="Zona oeste">San Miguel</asp:ListItem>
+                <asp:ListItem Value="Zona sur">Boedo</asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <br />
         </div>
     </form>
 </body>

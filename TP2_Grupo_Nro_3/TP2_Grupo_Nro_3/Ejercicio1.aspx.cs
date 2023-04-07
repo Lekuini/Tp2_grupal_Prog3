@@ -51,9 +51,10 @@ namespace TP2_Grupo_Nro_3
         {
             lbl.Visible = false;
             txt.BackColor = System.Drawing.Color.Beige;
-            String alerta = "Hay campos vacios " + txt.ID.ToString(); // hay campo vacio
-            String script = "<script type='text/javascript'>alert('" + alerta + "'); </script>";
-            ClientScript.RegisterStartupScript(this.GetType(), "mensaje", script);
+            String alerta = "Hay campos vacios " + txt.ID.ToString(); // Se crea un string el cual informara que hay campos vacios y cual campo en particular
+            String script = "<script type='text/javascript'>alert('" + alerta + "'); </script>"; //Se crea otro string el cual tiene codigo de javascript
+            //utilizado para poder mostrar como una alerta el string "Hay campos vacios"
+            ClientScript.RegisterStartupScript(this.GetType(), "mensaje", script); //Este string se muestra por medio de una alerta 
 
         }
 
