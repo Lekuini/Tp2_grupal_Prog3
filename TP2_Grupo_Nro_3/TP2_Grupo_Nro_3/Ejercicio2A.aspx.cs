@@ -44,35 +44,54 @@ namespace TP2_Grupo_Nro_3
         }
         protected void btnVerResumen_Click(object sender, EventArgs e)
         {
-            Boolean okTxtNombre = false;
-            Boolean okTxtApellido = false;
-            if (tieneCaracteresQueNoSonLetras(txtNombre))
-            {               
-                ingresoMal(txtNombre, lblNombre, "Ingrese solo letras");                
-            }
-            else
+            String aux = "";
+
+            for (int i = 0; i < cbxlTemas.Items.Count; i++)
             {
-                ingresoBien(txtNombre, lblNombre);
-                okTxtNombre = true;
-            }
-            /// validacion de TextBoxApellido
-            if(tieneCaracteresQueNoSonLetras(txtApellido))
-            {
-                ingresoMal(txtApellido, lblApellido, "Ingrese solo letras");
-            }
-            else
-            {
-                ingresoBien(txtApellido, lblApellido);
-                okTxtApellido = true;
+                if (cbxlTemas.Items[i].Selected == true)
+                {
+                    aux += cbxlTemas.Items[i].ToString();
+                }
             }
 
-            if(okTxtNombre && okTxtApellido)
+            if (aux.Trim() != "" && txtApellido.Text.Trim() != "" && txtNombre.Text.Trim() != "")
             {
-                txtNombre.BackColor = System.Drawing.Color.White; // si no tiene numeros se esconde el label
-                lblNombre.Visible = false;                        // y se restablece el control del textbox
-                txtApellido.BackColor = System.Drawing.Color.White; // si no tiene numeros se esconde el label
-                lblApellido.Visible = false;                        // y se restablece el control del textbox
-                Server.Transfer("Ejercicio2B.aspx");
+                Boolean okTxtNombre = false;
+                Boolean okTxtApellido = false;
+                if (tieneCaracteresQueNoSonLetras(txtNombre))
+                {
+                    ingresoMal(txtNombre, lblNombre, "Ingrese solo letras");
+                }
+                else
+                {
+                    ingresoBien(txtNombre, lblNombre);
+                    okTxtNombre = true;
+                }
+                /// validacion de TextBoxApellido
+                if (tieneCaracteresQueNoSonLetras(txtApellido))
+                {
+                    ingresoMal(txtApellido, lblApellido, "Ingrese solo letras");
+                }
+                else
+                {
+                    ingresoBien(txtApellido, lblApellido);
+                    okTxtApellido = true;
+                }
+
+                if (okTxtNombre && okTxtApellido)
+                {
+                    txtNombre.BackColor = System.Drawing.Color.White; // si no tiene numeros se esconde el label
+                    lblNombre.Visible = false;                        // y se restablece el control del textbox
+                    txtApellido.BackColor = System.Drawing.Color.White; // si no tiene numeros se esconde el label
+                    lblApellido.Visible = false;                        // y se restablece el control del textbox
+                    Server.Transfer("Ejercicio2B.aspx");
+                }
+            }
+            else
+            {
+                String alerta = "Seleccione un elemento o complete los campos restantes"; // hay campo vacio
+                String script = "<script type='text/javascript'>alert('" + alerta + "'); </script>";
+                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", script);
             }
         }
     }
