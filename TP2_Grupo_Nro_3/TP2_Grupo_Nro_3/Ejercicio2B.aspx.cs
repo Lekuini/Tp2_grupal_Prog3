@@ -11,7 +11,17 @@ namespace TP2_Grupo_Nro_3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblCampoNombre.Text = Request["txtNombre"].ToString();
+            lblCampoApellido.Text = Request["txtApellido"].ToString();
+            lblCampoZona.Text = ((DropDownList)PreviousPage.FindControl("ddlCiudades")).SelectedValue.ToString();
 
+            for(int i = 0; i < ((CheckBoxList)PreviousPage.FindControl("cbxlTemas")).Items.Count; i++)
+            {
+                if (((CheckBoxList)PreviousPage.FindControl("cbxlTemas")).Items[i].Selected)
+                {
+                    lblTemas.Text += ((CheckBoxList)PreviousPage.FindControl("cbxlTemas")).Items[i].Text + "<br/>";
+                }
+            }
         }
     }
 }
