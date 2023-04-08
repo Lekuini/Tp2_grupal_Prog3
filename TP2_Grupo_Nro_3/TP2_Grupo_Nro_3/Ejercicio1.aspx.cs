@@ -14,7 +14,7 @@ namespace TP2_Grupo_Nro_3
 
         }
 
-        private bool tieneNumeros(TextBox palabra) // Función que validad si dentro del textbox hay numeros o letras con acentos o tildes
+        private bool tieneCaracteresQueNoSonLetras(TextBox palabra) // Función que validad si dentro del textbox hay numeros o letras con acentos o tildes
         {                                          // comparando el valor ASCII de los caracteres. 
             for (int i=0; i <= palabra.Text.Length - 1; i++)
             {
@@ -25,7 +25,7 @@ namespace TP2_Grupo_Nro_3
             }
             return false;
         }
-        private bool soloNumeros(TextBox cantidad)///Funcion para validar q solo se ingresen numeros
+        private bool tieneCaracteresQueNoSonNumeros(TextBox cantidad)///Funcion para validar q solo se ingresen numeros
         {
             for (int i=0; i<= cantidad.Text.Length -1; i++)///los numeros van del codigo ascii 48(0)hasta el 57(9)
             {
@@ -51,10 +51,9 @@ namespace TP2_Grupo_Nro_3
         {
             lbl.Visible = false;
             txt.BackColor = System.Drawing.Color.Beige;
-            String alerta = "Hay campos vacios " + txt.ID.ToString(); // Se crea un string el cual informara que hay campos vacios y cual campo en particular
-            String script = "<script type='text/javascript'>alert('" + alerta + "'); </script>"; //Se crea otro string el cual tiene codigo de javascript
-            //utilizado para poder mostrar como una alerta el string "Hay campos vacios"
-            ClientScript.RegisterStartupScript(this.GetType(), "mensaje", script); //Este string se muestra por medio de una alerta 
+            String alerta = "Hay campos vacios " + txt.ID.ToString(); // hay campo vacio
+            String script = "<script type='text/javascript'>alert('" + alerta + "'); </script>";
+            ClientScript.RegisterStartupScript(this.GetType(), "mensaje", script);
 
         }
 
@@ -84,7 +83,7 @@ namespace TP2_Grupo_Nro_3
             Boolean okNombreProducto2 = false;/// bandera si esta ok nombre producto 2
             Boolean okCantidadProducto1 = false;/// bandera si esta ok cantidad producto 1
             Boolean okCantidadProducto2 = false; /// bandera si esta ok cantidad producto 2
-            if (tieneNumeros(txtNombreProducto1) || txtNombreProducto1.Text == "") // se determina si el textbox contiene numeros
+            if (tieneCaracteresQueNoSonLetras(txtNombreProducto1) || txtNombreProducto1.Text == "") // se determina si el textbox contiene numeros
             {
                 if (txtNombreProducto1.Text == "")
                 {
@@ -105,7 +104,7 @@ namespace TP2_Grupo_Nro_3
                 okNombreProducto1 = true;
             }
 
-            if (tieneNumeros(txtNombreProducto2) || txtNombreProducto2.Text == "") // se determina si el textbox coentiene numeros
+            if (tieneCaracteresQueNoSonLetras(txtNombreProducto2) || txtNombreProducto2.Text == "") // se determina si el textbox coentiene numeros
             {
                 if (txtNombreProducto2.Text == "")
                 {
@@ -126,7 +125,7 @@ namespace TP2_Grupo_Nro_3
                 okNombreProducto2 = true;
             }
 
-            if(soloNumeros(txtCantidad1)|| txtCantidad1.Text=="")
+            if(tieneCaracteresQueNoSonNumeros(txtCantidad1)|| txtCantidad1.Text=="")
             {
                 if (txtCantidad1.Text == "")
                 {
@@ -145,7 +144,7 @@ namespace TP2_Grupo_Nro_3
 
             /// Funcion para validar que en cantidad 2 se ingresen solo numeros
 
-            if (soloNumeros(txtCantidad2) || txtCantidad2.Text == "")
+            if (tieneCaracteresQueNoSonNumeros(txtCantidad2) || txtCantidad2.Text == "")
             {
                 if (txtCantidad2.Text == "")
                 {
