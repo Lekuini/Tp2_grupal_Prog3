@@ -26,7 +26,6 @@ namespace TP2_Grupo_Nro_3
             return false;
         }
 
-
         private void ingresoMal(TextBox txt, Label lbl, String msn)
         {
             txt.BackColor = System.Drawing.Color.Beige; // si es verdadero se pinta el textbox de otro color
@@ -34,6 +33,7 @@ namespace TP2_Grupo_Nro_3
             lbl.ForeColor = System.Drawing.Color.Red;
             lbl.Text = msn;                // error
         }
+
 
         private void ingresoBien(TextBox txt, Label lbl)
         {
@@ -46,20 +46,18 @@ namespace TP2_Grupo_Nro_3
         {
             String aux = "";
 
-            for (int i = 0; i < cbxlTemas.Items.Count; i++)
-            {
-                if (cbxlTemas.Items[i].Selected == true)
-                {
-                    aux += cbxlTemas.Items[i].ToString();
+            for (int i = 0; i < cbxlTemas.Items.Count; i++) {
+                if (cbxlTemas.Items[i].Selected == true) {
+                    aux += cbxlTemas.Items[i].ToString(); 
                 }
             }
 
-            if (aux.Trim() != "" && txtApellido.Text.Trim() != "" && txtNombre.Text.Trim() != "")
+            if (aux.Trim() != "")
             {
                 Boolean okTxtNombre = false;
                 Boolean okTxtApellido = false;
-                if (tieneCaracteresQueNoSonLetras(txtNombre))
-                {
+                if (tieneCaracteresQueNoSonLetras(txtNombre) || txtNombre.Text == "") // se corroboroa que se haya ingresado algo
+                {                                                                     // y que solo sean letras
                     ingresoMal(txtNombre, lblNombre, "Ingrese solo letras");
                 }
                 else
@@ -68,8 +66,8 @@ namespace TP2_Grupo_Nro_3
                     okTxtNombre = true;
                 }
                 /// validacion de TextBoxApellido
-                if (tieneCaracteresQueNoSonLetras(txtApellido))
-                {
+                if (tieneCaracteresQueNoSonLetras(txtApellido) || txtApellido.Text == "") // se corroboroa que se haya ingresado algo,
+                {                                                                         // y que solo sean letras
                     ingresoMal(txtApellido, lblApellido, "Ingrese solo letras");
                 }
                 else
@@ -87,8 +85,7 @@ namespace TP2_Grupo_Nro_3
                     Server.Transfer("Ejercicio2B.aspx");
                 }
             }
-            else
-            {
+            else {
                 String alerta = "Seleccione un elemento o complete los campos restantes"; // hay campo vacio
                 String script = "<script type='text/javascript'>alert('" + alerta + "'); </script>";
                 ClientScript.RegisterStartupScript(this.GetType(), "mensaje", script);
