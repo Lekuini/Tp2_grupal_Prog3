@@ -13,7 +13,7 @@ namespace TP2_Grupo_Nro_3
         {
             lblCampoNombre.Text = Request["txtNombre"].ToString();
             lblCampoApellido.Text = Request["txtApellido"].ToString();
-            lblCampoZona.Text = ((DropDownList)PreviousPage.FindControl("ddlCiudades")).SelectedValue.ToString();
+            lblCampoZona.Text = Request["ddlCiudades"].ToString();
 
             for(int i = 0; i < ((CheckBoxList)PreviousPage.FindControl("cbxlTemas")).Items.Count; i++)
             {
