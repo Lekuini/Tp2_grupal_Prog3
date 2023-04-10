@@ -13,5 +13,20 @@ namespace TP2_Grupo_Nro_3
         {
 
         }
+
+        protected void lbtnRojo_Click(object sender, EventArgs e)
+        {
+            lblEjemplo.ForeColor = System.Drawing.Color.Red;
+        }
+
+        protected void lbtnAzul_Click(object sender, EventArgs e)
+        {
+            lblEjemplo.ForeColor = System.Drawing.Color.Blue;
+        }
+
+        protected void lbtnVerde_Click(object sender, EventArgs e)
+        {
+            lblEjemplo.ForeColor = System.Drawing.Color.LimeGreen;
+        }
     }
 }
