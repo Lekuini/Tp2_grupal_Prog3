@@ -10,6 +10,16 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:LinkButton ID="lbtnRojo" runat="server" OnClick="lbtnRojo_Click">Rojo</asp:LinkButton>
+            <br />
+            <asp:LinkButton ID="lbtnAzul" runat="server" OnClick="lbtnAzul_Click">Azul</asp:LinkButton>
+            <br />
+            <asp:LinkButton ID="lbtnVerde" runat="server" OnClick="lbtnVerde_Click">Verde</asp:LinkButton>
+            <br />
+            <br />
+            <br />
+            <asp:Label ID="lblEjemplo" runat="server" Text="Texto coloreado"></asp:Label>
+            <br />
         </div>
     </form>
 </body>
